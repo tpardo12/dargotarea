@@ -27,7 +27,7 @@ def get_selected_items(w, n, tesoros, k):
     selected_items = []
     while n > 0 and w > 0:
         if k[n][w] != k[n-1][w]:
-            selected_items.append(tesoros[n-1])
+            selected_items.append(n-1) 
             w -= tesoros[n-1][0]
         n -= 1
     return selected_items
@@ -37,16 +37,21 @@ def main():
     while x != '':
         N = stdin.readline().strip()
         tesoros = []
+        tesorosnomod = []
         for i in range(int(N)):
-            tesoros.append(tuple(map(int,stdin.readline().split())))
+            m,s = stdin.readline().split()
+            tesorosnomod.append((int(m),int(s)))
+            tesoros.append(((2*int(y)*(int(m)) + (int(y)* int(m))),int(s)))
     
         k = [[-1 for i in range(int(x)+1)] for j in range(int(N)+1)]
         oro = knapsck(int(x), int(N), tesoros, k)
         selected_items = get_selected_items(int(x), int(N), tesoros, k)
         stdout.write(str(oro) + '\n')
         stdout.write(str(len(selected_items)) + '\n')
-        for item in selected_items:
-            stdout.write(str(item[0]) + ' ' + str(item[1]) + '\n')
+        tesorosnomod = tesorosnomod[::-1]
+        for index in selected_items:
+           item  = tesorosnomod[index]
+           stdout.write(str(item[0]) + ' ' + str(item[1]) + '\n')
         x,y = stdin.readline().split()
        
 
