@@ -39,12 +39,16 @@ def main():
         tesoros = []
         for i in range(int(N)):
             tesoros.append(tuple(map(int,stdin.readline().split())))
-        
+    
         k = [[-1 for i in range(int(x)+1)] for j in range(int(N)+1)]
         oro = knapsck(int(x), int(N), tesoros, k)
-        selected_items = get_selected_items(int(y), int(N), tesoros, k)
-      
-        N = stdin.readline().strip()
+        selected_items = get_selected_items(int(x), int(N), tesoros, k)
+        stdout.write(str(oro) + '\n')
+        stdout.write(str(len(selected_items)) + '\n')
+        for item in selected_items:
+            stdout.write(str(item[0]) + ' ' + str(item[1]) + '\n')
+        x,y = stdin.readline().split()
+       
 
         
 if __name__ == "__main__":
