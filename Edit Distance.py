@@ -35,7 +35,6 @@ def listas (l1, l2):
 
 def main():
     x = stdin.readline()
-    stdin.readline()
     for i in range(int(x)):
         y = stdin.readline()
         l1 = stdin.readline()
@@ -44,7 +43,7 @@ def main():
         mapl2 = list(map(int, l2.split()))
         sol = listas(mapl1,mapl2)
         stdout.write('Caso '  +  str(i +1 ) + ': '  + str(sol) + '\n')
-        stdin.readline()
+    
         
        
        
