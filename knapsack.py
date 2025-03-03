@@ -34,28 +34,31 @@ def get_selected_items(w, n, tesoros, k):
 
 def main():
     x,y = stdin.readline().split()
-    while x != '':
+    while x != '' and y != '':
         N = stdin.readline().strip()
-        tesoros = []
-        tesorosnomod = []
-        for i in range(int(N)):
-            m,s = stdin.readline().split()
-            tesorosnomod.append((int(m),int(s)))
-            tesoros.append(((2*int(y)*(int(m)) + (int(y)* int(m))),int(s)))
-    
-        k = [[-1 for i in range(int(x)+1)] for j in range(int(N)+1)]
-        oro = knapsck(int(x), int(N), tesoros, k)
-        selected_items = get_selected_items(int(x), int(N), tesoros, k)
-        stdout.write(str(oro) + '\n')
-        stdout.write(str(len(selected_items)) + '\n')
-        tesorosnomod = tesorosnomod[::-1]
-        for index in selected_items:
-           item  = tesorosnomod[index]
-           stdout.write(str(item[0]) + ' ' + str(item[1]) + '\n')
-        x,y = stdin.readline().split()
-       
-
         
+        if N != '':
+            tesoros = []
+            tesorosnomod = []
+            for i in range(int(N)):
+                m,s = stdin.readline().split()
+                tesorosnomod.append((int(m),int(s)))
+                tesoros.append(((2*int(y)*(int(m)) + (int(y)* int(m))),int(s)))
+        
+            k = [[-1 for i in range(int(x)+1)] for j in range(int(N)+1)]
+            oro = knapsck(int(x), int(N), tesoros, k)
+            selected_items = get_selected_items(int(x), int(N), tesoros, k)
+            stdout.write(str(oro) + '\n')
+            itemstot = len(selected_items) -1 
+            stdout.write(str(itemstot) + '\n')
+            indx = selected_items[::-1]
+            for index in range(1, len(selected_items)):
+                ind = indx[index]
+                item  = tesorosnomod[ind]
+                stdout.write(str(item[0]) + ' ' + str(item[1]) + '\n')
+        else: 
+            x  = ''
+       
 if __name__ == "__main__":
     main()
     
