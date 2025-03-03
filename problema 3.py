@@ -1,3 +1,7 @@
+from decimal import Decimal
+from sys import stdin, stdout
+
+
 def sol(l1, l2, i ,j,t):
     ret = 0
     if i < 0 and j >= 0:
@@ -27,6 +31,23 @@ def listas (l1, l2):
     ret = sol(l1,l2,al1,al2,t)
     return(ret)
 
-l1 = [1,4,2,3,5]
-l2 = [5,4,1,2,3]
-print(listas(l1,l2))
+
+
+def main():
+    x = stdin.readline()
+    stdin.readline()
+    for i in range(int(x)):
+        y = stdin.readline()
+        l1 = stdin.readline()
+        mapl1 = list(map(int, l1.split()))
+        l2 = stdin.readline()
+        mapl2 = list(map(int, l2.split()))
+        sol = listas(mapl1,mapl2)
+        stdout.write('Caso '  +  str(i +1 ) + ': '  + str(sol) + '\n')
+        stdin.readline()
+        
+       
+       
+if __name__ == "__main__":
+    main()
+    
