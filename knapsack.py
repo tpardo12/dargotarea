@@ -62,3 +62,15 @@ def main():
 if __name__ == "__main__":
     main()
     
+"""
+La Solucion es TD
+
+LA compleidad espacial el (tiempo maximo * numero de tesoros), la complejidad temporal es (N * W) donde N es el numero de elementos
+y W es el tiempo maximo que tenemos para ir por los tesoros
+
+LA estrategia abordada no es muy diferente al bien conocido problema de la mochila, basicamente vamos memorizando las soluciones optimas 
+que llevamos hasta ahora, resolviendo el problema de manera recursiva dividiendo el problema en unos mas pequeños . Asi evitando calculos repetivivos y ayudando a la complejidad temporal.
+Para el retorno de los tesoros en los que ya hemos pasado vamos a recorrer el arreglo en el que almacenamos los problemas y hacemos una operacion inversa, mirando si escogimos o no el tesoro 
+en cuestion.
+
+"""

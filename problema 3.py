@@ -51,3 +51,13 @@ def main():
 if __name__ == "__main__":
     main()
     
+
+"""
+la solucion es TD
+
+La complejidad espacial es (N*N) donde N es la longitud de números en la permutación, y la complejidad temporal tambien es (N*N)
+La estrategia abordada es tener dos aputadores, en las ultimas posiciones de cada lista, luego vamos comparando, si los numeros son diferentes tenemos que sumar 1,
+pues no esta en la posicion correcta, pero como hay dos arreglos hay que ver si  se avanza en uno o en otro, se escoge el minimo de estos dos.
+Esto claro almacenando en un arreglo (N*N) las soluciones optimas en cada paso, espto ayuda a no repetir operaciones y ayuda con la complejidad temporal.
+
+"""

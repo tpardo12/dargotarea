@@ -76,3 +76,18 @@ if __name__ == "__main__":
         change_int = int(change * 100)
         print(pep(number_of_coins, change_int))
         current_case = sys.stdin.readline().strip()
+        
+"""
+Solución es TD
+
+La complejidad espacial es de 2* monto maximo ya que se utilizan para almacenar solucion de los dos algortimos (persona y tendero)
+Lacomjeidad temporal es  O (V * N * L) donde V es el valor objetivo, N es el numero de denominaciones y L es el Lïmite maximo al que
+se alcanza.
+
+Basicamente lo que se realizo es tomar los dos casos por separado, en el caso de la persona con monedas limitadas se realizo un algorimo que 
+con monedas limitadas calcula el minimo de monedas solicitadas hasta el monto maximo que puede alcanzar. 
+Por otro lado la persona con monedas ilimitadas tambien hace su calculo hasta el monto maximo, y al final se suman el numero maximo de intercambios
+desde el valor objetivo.
+
+
+"""
